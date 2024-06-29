@@ -103,17 +103,17 @@ Represents the status of a comic artwork.
 
 Represents the result of retrieving a comic artwork.
 
-status (ArtworkStatus): The status of the comic artwork.
+`status` (ArtworkStatus): The status of the comic artwork.
 
-comicData (string): A JSON-encoded string containing the comic panel data.
+`comicData` (string): A JSON-encoded string containing the comic panel data.
 
 ### ComicData
 
 Represents the data of the generated comic panels.
 
-panels (array): An array of objects representing the comic panels.
+`panels` (array): An array of objects representing the comic panels.
 
-assetUrl (string): The URL of the comic panel image asset.
+`assetUrl` (string): The URL of the comic panel image asset.
 
 ## Error Handling
 
