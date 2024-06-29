@@ -16,17 +16,17 @@ const API_KEY = "YOUR_API_KEY";
 
 Generates a new comic artwork based on the provided prompt and image URL.
 
-URL: <https://www.llamagen.ai/api/openapi/artworks>
+- URL: <https://www.llamagen.ai/api/openapi/artworks>
 
-Method: POST
+- Method: POST
 
-Request Body:
+- Request Body:
 
-prompt (string): The prompt for generating the comic artwork. Accepted values: "running", "flexibility", or "flying".
+    `prompt` (string): The prompt for generating the comic artwork. Accepted values: "running", "flexibility", or "flying".
 
-imageUrl (string): The URL of the image to use as a reference for generating the comic artwork.
+    `imageUrl` (string): The URL of the image to use as a reference for generating the comic artwork.
 
-Example Request:
+- Example Request:
 
 ```
 const formdata = new FormData();
@@ -42,7 +42,7 @@ const res = await fetch("<https://www.llamagen.ai/api/openapi/artworks>", {
 });
 ```
 
-Example Response:
+- Example Response:
 
 ```
 {
@@ -57,15 +57,15 @@ The response includes the ID of the generated comic artwork, which can be used t
 Retrieve Comic Artwork
 Retrieves the generated comic panels for a specific artwork ID.
 
-URL: <https://llamagen.ai/api/artworks/{id}>
+- URL: <https://llamagen.ai/api/artworks/{id}>
 
-Method: GET
+- Method: GET
 
 ### Path Parameters
 
 `id` (string): The ID of the comic artwork to retrieve.
 
-Example Request:
+- Example Request:
 
 ```
 const headers = new Headers();
@@ -76,7 +76,7 @@ const response = await fetch("https://llamagen.ai/api/artworks/" + id, {
 });
 ```
 
-Example Response:
+- Example Response:
 
 ```
 {
