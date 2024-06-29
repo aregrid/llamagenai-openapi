@@ -32,8 +32,6 @@ Example Request:
 const formdata = new FormData();
 formdata.append("prompt", "running");
 formdata.append("imageUrl", "https://example.com/image.png");
-```
-
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${API_KEY}`);
 
@@ -42,6 +40,8 @@ const res = await fetch("<https://www.llamagen.ai/api/openapi/artworks>", {
   body: formdata,
   headers: headers,
 });
+```
+
 Example Response:
 
 ```
@@ -63,7 +63,7 @@ Method: GET
 
 ### Path Parameters
 
-id (string): The ID of the comic artwork to retrieve.
+`id` (string): The ID of the comic artwork to retrieve.
 
 Example Request:
 
