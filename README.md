@@ -61,7 +61,34 @@ curl -X GET "https://api.llamagen.ai/v1/comics/generations/YOUR_ARTWORK_ID" \
 ```json
 {
   "status": "PROCESSED",
-  "comicData": "{\"panels\":[{\"assetUrl\":\"https://example.com/panel1.png\"},{\"assetUrl\":\"https://example.com/panel2.png\"}]}"
+  "comics": [
+    {
+      "page": 0,
+      "panels": [
+        {
+          "assetUrl": "/demo/pictures/demo_1.jpg",
+          "panel": 0,
+          "caption": "In the cafe, Mr. llamagen sat in a comfortable corner, sipping coffee with satisfaction."
+        },
+        {
+          "assetUrl": "/demo/pictures/demo_2.jpg",
+          "panel": 1,
+          "caption": "A speeding car suddenly smashed through the glass window of the coffee shop, causing chaos."
+        },
+        {
+          "assetUrl": "/demo/pictures/demo_3.jpg",
+          "panel": 2,
+          "caption": "llamagen quickly jumped under the table, blocking the possible impact with himself."
+        },
+        {
+          "assetUrl": "/demo/pictures/demo_4.jpg",
+          "panel": 3,
+          "caption": "I left the coffee immediately for fear that the enemy in the dark would find out."
+        }
+      ],
+      "prompt": "llamagen The teacher was drinking coffee in a coffee shop. Suddenly a car broke into the coffee shop."
+    }
+  ]
 }
 ```
 
