@@ -16,27 +16,13 @@ const API_KEY = "YOUR_API_KEY";
 
 Creates a new comic artwork based on the provided prompt, image URL, and other parameters.
 
-- **URL**: `https://llamagen.ai/api/openapi/artworks`
-- **Method**: `POST`
-- **Headers**:
-  - `Authorization`: `Bearer YOUR_API_KEY`
-- **Request Body**:
-  - `prompt` (string): The prompt for generating the comic artwork. `"other"`.
-
-#### Example Request
-
-```typescript
-const formdata = new FormData();
-formdata.append("prompt", "running");
-
-const headers = new Headers();
-headers.append("Authorization", `Bearer ${API_KEY}`);
-
-const res = await fetch("https://llamagen.ai/api/openapi/artworks", {
-  method: "POST",
-  body: formdata,
-  headers: headers,
-});
+```bash
+curl -X POST "https://llamagen.ai/api/openapi/artworks" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+  "prompt": "flexibility"
+}'
 ```
 
 ```bash
@@ -45,26 +31,6 @@ curl -X POST "https://llamagen.ai/api/openapi/artworks" \
 -F "prompt=flexibility" \
 ```
 
-```python
-import requests
-import json
-base_url = "https://llamagen.ai"
-def create_artwork(api_token: str, prompt: str, imageUrl: str, comicRoles: list, name: str, aspectRatio: str, preset: str, seed: int, gender: str, age: int) -> dict:
-    api_url = f"{base_url}/api/openapi/artworks"
-    headers = {
-        'Authorization': f'Bearer {api_token}'
-    }
-    data = {
-        'prompt': prompt,
-    }
-
-    response = requests.post(api_url, headers=headers, data=data)
-
-    if response.status_code == 200:
-        return response.json()
-    else:
-        response.raise_for_status()
-```
 
 #### Example Response
 
@@ -82,53 +48,11 @@ The response includes the ID of the created comic artwork, which can be used to 
 
 Retrieves the generated comic panels for a specific artwork ID.
 
-- **URL**: `https://llamagen.ai/api/openapi/artworks/{id}`
-- **Method**: `GET`
-- **Headers**:
-  - `Authorization`: `Bearer YOUR_API_KEY`
-- **Path Parameters**:
-  - `id` (string): The ID of the comic artwork to retrieve.
-
-#### Example Request
-
-```typescript
-const headers = new Headers();
-headers.append("Authorization", `Bearer ${API_KEY}`);
-
-const response = await fetch("https://llamagen.ai/api/openapi/artworks/" + id, {
-  headers: headers,
-});
-```
-
 ```bash
 curl -X GET "https://llamagen.ai/api/openapi/artworks/YOUR_ARTWORK_ID" \
 -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-```python
-import requests
-import json
-base_url = "https://llamagen.ai"
-def get_artwork(artwork_id, api_token):
-    api_url = f"{base_url}/api/openapi/artworks"
-    headers = {
-        'Authorization': f'Bearer {api_token}',
-    }
-
-    response = requests.get(f"{api_url}/{artwork_id}", headers=headers)
-
-    if response.status_code == 401:
-        print("Unauthorized request.")
-        return None
-    elif response.status_code == 404:
-        print("Artwork not found.")
-        return None
-    elif response.status_code == 500:
-        print("Server error.")
-        return None
-
-    return response.json()
-```
 
 #### Example Response
 
