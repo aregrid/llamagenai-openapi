@@ -21,29 +21,13 @@ Creates a new comic artwork based on the provided prompt, image URL, and other p
 - **Headers**:
   - `Authorization`: `Bearer YOUR_API_KEY`
 - **Request Body**:
-  - `prompt` (string): The prompt for generating the comic artwork. Accepted values: `running`, `flexibility`, `flying`, `laser_speed`, `laser_flexibility`, `laser_flying`, `castle_speed`, `castle_flexibility`, `castle_flying`.
-  - `imageUrl` (string): The URL of the image to use as a reference for generating the comic artwork.
-  - `comicRoles` (array): An array of comic roles to include in the artwork. Accepted values: `hero`, `villain`, `sidekick`, `love_interest`, `mentor`, `scientist`, `robot`, `animal`, `monster`, `civilian`.
-  - `name` (string): The name of the main character in the comic artwork.
-  - `aspectRatio` (string): The aspect ratio of the comic artwork. Accepted values: `"1:1"`, `"4:3"`, `"16:9"`, `"2.35:1"`.
-  - `preset` (string): The preset to use for generating the comic artwork. Accepted values: `"classic"`, `"modern"`, `"manga"`, `"superhero"`, `"fantasy"`.
-  - `seed` (number): A seed value to use for generating the comic artwork. Must be an integer between 0 and 1000000.
-  - `gender` (string): The gender of the person in the image. Accepted values: `"male"`, `"female"`, `"other"`.
-  - `age` (number): The age of the person in the image. Must be a number between 0 and 150.
+  - `prompt` (string): The prompt for generating the comic artwork. `"other"`.
 
 #### Example Request
 
 ```typescript
 const formdata = new FormData();
 formdata.append("prompt", "running");
-formdata.append("imageUrl", "https://example.com/image.png");
-formdata.append("comicRoles", ["hero", "villain"]);
-formdata.append("name", "Captain Awesome");
-formdata.append("aspectRatio", "16:9");
-formdata.append("preset", "superhero");
-formdata.append("seed", 12345);
-formdata.append("gender", "male");
-formdata.append("age", 30);
 
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${API_KEY}`);
@@ -59,14 +43,6 @@ const res = await fetch("https://llamagen.ai/api/openapi/artworks", {
 curl -X POST "https://llamagen.ai/api/openapi/artworks" \
 -H "Authorization: Bearer YOUR_API_KEY" \
 -F "prompt=flexibility" \
--F "imageUrl=https://example.com/image.png" \
--F "comicRoles[]=hero&comicRoles[]=villain" \
--F "name=Captain Awesome" \
--F "aspectRatio=16:9" \
--F "preset=superhero" \
--F "seed=12345" \
--F "gender=male" \
--F "age=30"
 ```
 
 ```python
@@ -80,14 +56,6 @@ def create_artwork(api_token: str, prompt: str, imageUrl: str, comicRoles: list,
     }
     data = {
         'prompt': prompt,
-        'imageUrl': imageUrl,
-        'comicRoles[]': comicRoles,
-        'name': name,
-        'aspectRatio': aspectRatio,
-        'preset': preset,
-        'seed': seed,
-        'gender': gender,
-        'age': age
     }
 
     response = requests.post(api_url, headers=headers, data=data)
