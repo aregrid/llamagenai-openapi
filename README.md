@@ -39,8 +39,9 @@ curl -X POST "https://api.llamagen.ai/v1/comics/generations" \
 
 ```json
 {
-    "id": "cm0q7jeii000l7k3mosxpqcma",
-    "status": "LOADING"
+  "id": "cm20e3dnb00097k8753vd0wt4",
+  "status": "LOADING",
+  "prompt": "a comic about a cat and a dog"
 }
 ```
 
@@ -59,33 +60,36 @@ curl -X GET "https://api.llamagen.ai/v1/comics/generations/YOUR_ARTWORK_ID" \
 
 ```json
 {
-  "status": "PROCESSED",
+  "id": "cm20e3dnb00097k8753vd0wt4",
+  "status": "LOADING",
+  "prompt": "a comic about a cat and a dog",
   "comics": [
     {
       "page": 0,
+      "prompt": "",
+      "layout": "Layout0",
       "panels": [
         {
-          "assetUrl": "/demo/pictures/demo_1.jpg",
+          "assetUrl": "",
           "panel": 0,
-          "caption": "In the cafe, Mr. llamagen sat in a comfortable corner, sipping coffee with satisfaction."
+          "caption": ""
         },
         {
-          "assetUrl": "/demo/pictures/demo_2.jpg",
+          "assetUrl": "",
           "panel": 1,
-          "caption": "A speeding car suddenly smashed through the glass window of the coffee shop, causing chaos."
+          "caption": ""
         },
         {
-          "assetUrl": "/demo/pictures/demo_3.jpg",
+          "assetUrl": "",
           "panel": 2,
-          "caption": "llamagen quickly jumped under the table, blocking the possible impact with himself."
+          "caption": ""
         },
         {
-          "assetUrl": "/demo/pictures/demo_4.jpg",
+          "assetUrl": "",
           "panel": 3,
-          "caption": "I left the coffee immediately for fear that the enemy in the dark would find out."
+          "caption": ""
         }
-      ],
-      "prompt": "llamagen The teacher was drinking coffee in a coffee shop. Suddenly a car broke into the coffee shop."
+      ]
     }
   ]
 }
