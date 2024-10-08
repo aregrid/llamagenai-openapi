@@ -39,9 +39,8 @@ curl -X POST "https://api.llamagen.ai/v1/comics/generations" \
 
 ```json
 {
-  "artwork": {
-    "id": "artwork_id"
-  }
+    "id": "cm0q7jeii000l7k3mosxpqcma",
+    "status": "LOADING"
 }
 ```
 
