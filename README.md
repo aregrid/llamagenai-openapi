@@ -66,8 +66,6 @@ curl -X GET "https://api.llamagen.ai/v1/comics/generations/YOUR_ARTWORK_ID" \
   "comics": [
     {
       "page": 0,
-      "prompt": "",
-      "layout": "Layout0",
       "panels": [
         {
           "assetUrl": "",
